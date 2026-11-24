@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f3f6f3">
+    <title>Admin panel | EVOS</title>
+    <link rel="stylesheet" href="./admin.css">
+    <link rel="website icon" type="svg" href="./img/logo.svg">
+    
+</head>
+
+<body>
+    <div class="admin-layout">
+        <aside class="admin-sidebar">
+            <a class="admin-brand" href="./index.html" aria-label="EVOS saytiga qaytish">
+                <span class="brand-mark">E</span>
+                <span>EVOS<span class="brand-caption">ADMIN</span></span>
+            </a>
+
+            <p class="nav-caption">BOSH MENYU</p>
+            <nav class="admin-nav" aria-label="Admin bo'limlari">
+                <button class="nav-item active" type="button" data-view="overview">
+                    <span aria-hidden="true">▦</span> Umumiy ko'rinish
+                </button>
+                <button class="nav-item" type="button" data-view="orders">
+                    <span aria-hidden="true">▤</span> Buyurtmalar
+                    <span class="nav-count" id="navOrderCount">0</span>
+                </button>
+                <button class="nav-item" type="button" data-view="products">
+                    <span aria-hidden="true">◈</span> Mahsulotlar
+                </button>
+            </nav>
+
+            <div class="sidebar-bottom">
+                <div class="admin-profile">
+                    <span class="profile-avatar">A</span>
+                    <span><strong>Administrator</strong><small>Admin hisob</small></span>
+                </div>
+                <button class="logout-button" id="logoutButton" type="button">
+                    <span aria-hidden="true">↪</span> Chiqish
+                </button>
+            </div>
+        </aside>
+
+        <main class="admin-main">
+            <header class="page-header">
+                <div>
+                    <p class="eyebrow">EVOS • BOSHQARUV</p>
+                    <h1 id="pageTitle">Umumiy ko'rinish</h1>
+                    <p class="page-subtitle">Buyurtmalar va savdo ko'rsatkichlari</p>
+                </div>
+                <a class="store-link" href="./index.html"><span aria-hidden="true">↗</span> Saytga qaytish</a>
+            </header>
+
+            <p class="admin-notice" id="adminNotice" role="alert" hidden></p>
+
+            <section class="admin-view active" id="overviewView" aria-label="Umumiy ko'rinish">
+                <div class="stats-grid">
+                    <article class="stat-card">
+                        <div class="stat-top"><span class="stat-icon green">₮</span><span class="stat-label">Jami tushum</span></div>
+                        <strong class="stat-value" id="totalRevenue">0 so'm</strong>
+                        <span class="stat-hint">Barcha buyurtmalar bo'yicha</span>
+                    </article>
+                    <article class="stat-card">
+                        <div class="stat-top"><span class="stat-icon orange">▤</span><span class="stat-label">Buyurtmalar</span></div>
+                        <strong class="stat-value" id="totalOrders">0</strong>
+                        <span class="stat-hint">Qabul qilingan buyurtmalar</span>
+                    </article>
+                    <article class="stat-card">
+                        <div class="stat-top"><span class="stat-icon blue">◈</span><span class="stat-label">Mahsulotlar</span></div>
+                        <strong class="stat-value" id="totalProducts">0</strong>
+                        <span class="stat-hint">Menyudagi noyob mahsulotlar</span>
+                    </article>
+                    <article class="stat-card">
+                        <div class="stat-top"><span class="stat-icon violet">↗</span><span class="stat-label">Bugungi tushum</span></div>
+                        <strong class="stat-value" id="todayRevenue">0 so'm</strong>
+                        <span class="stat-hint" id="todayOrderHint">Bugungi buyurtmalar</span>
+                    </article>
+                </div>
+
+                <div class="dashboard-grid">
+                    <section class="panel revenue-panel">
+                        <div class="panel-heading">
+                            <div><h2>So'nggi 7 kun</h2><p>Kunlik tushum</p></div>
+                            <span class="panel-badge">Haftalik</span>
+                        </div>
+                        <div class="chart" id="revenueChart" aria-label="So'nggi yetti kunlik tushum diagrammasi"></div>
+                    </section>
+
+                    <section class="panel quick-summary">
+                        <div class="panel-heading"><div><h2>Qisqa ma'lumot</h2><p>Joriy holat</p></div></div>
+                        <div class="summary-row"><span>O'rtacha buyurtma</span><strong id="averageOrder">0 so'm</strong></div>
+                        <div class="summary-row"><span>Bugungi buyurtmalar</span><strong id="todayOrders">0</strong></div>
+                        <div class="summary-row"><span>Sotilgan mahsulotlar</span><strong id="soldItems">0</strong></div>
+                    </section>
+                </div>
+
+                <section class="panel table-panel">
+                    <div class="panel-heading">
+                        <div><h2>So'nggi buyurtmalar</h2><p>Yaqinda qabul qilingan buyurtmalar</p></div>
+                        <button class="text-button" type="button" data-open-view="orders">Barchasini ko'rish <span aria-hidden="true">→</span></button>
+                    </div>
+                    <div class="table-wrap">
+                        <table>
+                            <thead><tr><th>Buyurtma ID</th><th>Sana</th><th>Mijoz</th><th>Mahsulotlar</th><th>Summa</th></tr></thead>
+                            <tbody id="recentOrders"></tbody>
+                        </table>
+                    </div>
+                    <p class="empty-state" id="recentOrdersEmpty" hidden>Hozircha buyurtmalar mavjud emas.</p>
+                </section>
+            </section>
+
+            <section class="admin-view" id="ordersView" aria-label="Buyurtmalar" hidden>
+                <section class="panel table-panel">
+                    <div class="panel-heading">
+                        <div><h2>Barcha buyurtmalar</h2><p id="ordersDescription">Buyurtmalar va mijoz ma'lumotlari</p></div>
+                        <span class="panel-badge" id="ordersBadge">0 ta buyurtma</span>
+                    </div>
+                    <div class="table-wrap">
+                        <table>
+                            <thead><tr><th>Buyurtma ID</th><th>Sana</th><th>Mijoz</th><th>Manzil</th><th>Buyurtma tarkibi</th><th>Jami</th></tr></thead>
+                            <tbody id="allOrders"></tbody>
+                        </table>
+                    </div>
+                    <p class="empty-state" id="allOrdersEmpty" hidden>Hozircha buyurtmalar mavjud emas.</p>
+                </section>
+            </section>
+
+            <section class="admin-view" id="productsView" aria-label="Mahsulotlar" hidden>
+                <section class="panel table-panel">
+                    <div class="panel-heading">
+                        <div><h2>Menyu mahsulotlari</h2><p>Saytdagi mahsulotlar va buyurtmalardagi sotuv miqdori</p></div>
+                        <div class="product-heading-actions">
+                            <span class="panel-badge" id="productsBadge">0 ta mahsulot</span>
+                            <button class="add-product-button" id="openProductForm" type="button">+ Mahsulot qo'shish</button>
+                        </div>
+                    </div>
+                    <div class="table-wrap">
+                        <table>
+                            <thead><tr><th>Mahsulot</th><th>Kategoriya</th><th>Narxi</th><th>Sotilgan</th><th>Amallar</th></tr></thead>
+                            <tbody id="allProducts"></tbody>
+                        </table>
+                    </div>
+                    <p class="empty-state" id="allProductsEmpty" hidden>Menyu mahsulotlari topilmadi.</p>
+                </section>
+            </section>
+        </main>
+    </div>
+    <div class="product-modal-overlay" id="productModalOverlay" aria-hidden="true">
+        <section class="product-modal" role="dialog" aria-modal="true" aria-labelledby="productFormTitle">
+            <div class="product-modal-heading">
+                <div>
+                    <p class="eyebrow">MAHSULOT</p>
+                    <h2 id="productFormTitle">Yangi mahsulot</h2>
+                </div>
+                <button class="product-modal-close" id="closeProductForm" type="button" aria-label="Yopish">×</button>
+            </div>
+            <form id="productForm">
+                <input type="hidden" id="productId">
+                <label for="productTitle">Mahsulot nomi</label>
+                <input id="productTitle" type="text" required maxlength="100">
+                <label for="productCategory">Kategoriya</label>
+                <input id="productCategory" type="text" required maxlength="60" list="categorySuggestions" placeholder="Masalan: Lavash">
+                <datalist id="categorySuggestions"></datalist>
+                <label for="productPrice">Narxi (so'm)</label>
+                <input id="productPrice" type="number" required min="0" step="100">
+                <label for="productImage">Rasm URL manzili</label>
+                <input id="productImage" type="url" required placeholder="https://">
+                <label for="productDescription">Izoh</label>
+                <textarea id="productDescription" rows="3" maxlength="300"></textarea>
+                <div class="product-modal-actions">
+                    <button class="product-cancel" id="cancelProductForm" type="button">Bekor qilish</button>
+                    <button class="product-save" type="submit">Saqlash</button>
+                </div>
+            </form>
+        </section>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="./supabaseClient.js"></script>
+    <script src="./admin.js"></script>
+</body>
+
+</html>

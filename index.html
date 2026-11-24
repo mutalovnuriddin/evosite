@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EVOS Clone - Header & Hero</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./style.css">
+    <link rel="website icon" type="svg" href="./img/logo.svg">
+</head>
+
+<body>
+
+    <!-- Asosiy cheklovchi konteyner -->
+    <div class="container">
+
+        <!-- YUQORI KICHIK PANEL (Top bar) -->
+        <div class="top-bar">
+            <div class="top-bar-left">
+                <a href="#" class="top-link">Filiallar</a>
+                <a href="#" class="top-link">Vakansiyalar</a>
+                <a href="#" class="top-link">Biz haqimizda
+                    <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </a>
+                <a href="#" class="kids-btn">
+                    <span>🐳</span> Bolalarga
+                </a>
+            </div>
+            <div class="top-bar-right">
+                <a href="tel:+998712031212" class="phone-link">+998 71 203 12 12</a>
+                <div class="lang-switcher">
+                    <img src="https://flagcdn.com/w20/uz.png" alt="UZ" class="flag-icon">
+                    <span>O'zbek Tili</span>
+                    <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- ASOSIY HEADER (Oq quti) -->
+        <header class="main-header-box">
+            <!-- Logo -->
+            <a href="#" class="logo">EVOS</a>
+
+            <!-- O'ng tarafdagi harakatlar -->
+            <div class="header-actions">
+                <!-- Qidiruv -->
+                <button class="search-btn" id="searchToggle" type="button" aria-label="Qidiruvni ochish"
+                    aria-expanded="false" aria-controls="searchPanel">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <circle cx="11" cy="11" r="8" stroke-width="2"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65" stroke-width="2"></line>
+                    </svg>
+                </button>
+
+                <!-- Savat -->
+                <button class="cart-btn" id="openCart" type="button" aria-label="Savat, 0 ta mahsulot"
+                    aria-controls="cartOverlay" aria-expanded="false">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z">
+                        </path>
+                    </svg>
+                    Savat
+                    <span class="cart-count" id="cartCount" aria-live="polite" hidden>0</span>
+                </button>
+
+                
+                <button class="login-btn history-btn" id="openHistory" type="button" aria-controls="historyOverlay">
+                    <i class="fa-solid fa-clock-rotate-left"></i>
+                    Tarix
+                </button>
+
+                <!-- Admin panelga kirish -->
+                <button class="login-btn history-btn" id="openLogin" type="button" aria-controls="loginOverlay">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                    </svg>
+                    Kirish
+                </button>
+            </div>
+
+            <section class="search-panel" id="searchPanel" aria-hidden="true" aria-label="Mahsulot qidirish">
+                <label class="search-label" for="productSearch">Mahsulot nomini kiriting</label>
+                <input class="search-input" id="productSearch" type="search" placeholder="Masalan, lavash"
+                    autocomplete="off">
+                <p class="search-status" id="searchStatus" role="status" aria-live="polite">
+                    Qidirish uchun mahsulot nomini yozing
+                </p>
+                <div class="search-results" id="searchResults" role="list"></div>
+            </section>
+        </header>
+
+        <!-- HERO SECTION (Karusel) -->
+        <section class="hero-section">
+            <div class="hero-track">
+                <!-- Rasm 1 -->
+                <div class="hero-card">
+                    <img src="https://evos.uz/_next/image?url=https%3A%2F%2Fdevapp.ectn.uz%2Fuploads%2Fstories%2FwzA-C60sx6tsE6M8NjWDaum7Mz37hmuG.jpg&w=640&q=75"
+                        alt="Aksiya -10%">
+                </div>
+                <!-- Rasm 2 -->
+                <div class="hero-card">
+                    <img src="https://evos.uz/_next/image?url=https%3A%2F%2Fdevapp.ectn.uz%2Fuploads%2Fstories%2F2-DvpuQO21wxYUZOybYAsj_7T82pjft8.png&w=640&q=75"
+                        alt="EVOS Rewards">
+                </div>
+                <!-- Rasm 3 -->
+                <div class="hero-card">
+                    <img src="https://evos.uz/_next/image?url=https%3A%2F%2Fdevapp.ectn.uz%2Fuploads%2Fstories%2FakSZpM1IA6Gu3t2bWPutNEPVgRX6p8GF.png&w=640&q=75"
+                        alt="Lavash set">
+                </div>
+                <!-- Rasm 4 -->
+                <div class="hero-card">
+                    <img src="https://evos.uz/_next/image?url=https%3A%2F%2Fdevapp.ectn.uz%2Fuploads%2Fstories%2FUza3LIE8lNwUdBotF5QFtXJBkjqwLbly.png&w=640&q=75"
+                        alt="Bolalar box">
+                </div>
+                <!-- Rasm 5 -->
+                <div class="hero-card">
+                    <img src="https://evos.uz/_next/image?url=https%3A%2F%2Fdevapp.ectn.uz%2Fuploads%2Fstories%2FQBQ_167EXKu5R3MMY5ZcYOC_wVSa-RoV.png&w=640&q=75"
+                        alt="Combo">
+                </div>
+                <!-- Rasm 6 -->
+                <div class="hero-card">
+                    <img src="https://evos.uz/_next/image?url=https%3A%2F%2Fdevapp.ectn.uz%2Fuploads%2Fstories%2FFJSiwnyezOmFyImdWtMtyaXx6Y9V8zKz.png&w=640&q=75"
+                        alt="Strips">
+                </div>
+            </div>
+        </section>
+
+
+        <main class="main-content">
+
+            <!-- CHAP YON PANEL (Sidebar) -->
+            <aside class="sidebar">
+                <nav class="category-list">
+                    <!-- href orqali pastdagi id larga ulanadi -->
+                    <a href="#chizzi" class="category-item">
+                        <span class="cat-icon">🧀</span>
+                        <span class="cat-name">Chizzi Chizz</span>
+                    </a>
+                    <a href="#aksiyalar" class="category-item">
+                        <span class="cat-icon bg-red">%</span>
+                        <span class="cat-name">Aksiyalar</span>
+                    </a>
+                    <a href="#novinki" class="category-item">
+                        <span class="cat-icon bg-green">New!</span>
+                        <span class="cat-name">Новинки</span>
+                    </a>
+                    <a href="#lavash" class="category-item active">
+                        <img src="https://evos.uz/images/category/lavash.png" alt=""
+                            style="width: 24px; object-fit: contain;"
+                            onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'24\' height=\'24\'><text y=\'20\' font-size=\'20\'>🌯</text></svg>'">
+                        <span class="cat-name">Lavash</span>
+                    </a>
+                    <a href="#shaurma" class="category-item">
+                        <span class="cat-icon">🥙</span>
+                        <span class="cat-name">Shaurma</span>
+                    </a>
+                    <a href="#xot-dog" class="category-item">
+                        <span class="cat-icon">🌭</span>
+                        <span class="cat-name">Xot Dog</span>
+                    </a>
+                    <a href="#salatlar" class="category-item">
+                        <span class="cat-icon">🥗</span>
+                        <span class="cat-name">Salatlar</span>
+                    </a>
+                </nav>
+            </aside>
+
+            <!-- O'NG TOMON: Mahsulotlar (Product Grid) -->
+            <div class="products-area">
+
+                <!-- 1-BO'LIM: Chizzi Chizz -->
+                <section id="chizzi" class="menu-section">
+                    <div class="category-header">
+                        <span class="header-icon">🧀</span>
+                        <h2>Chizzi Chizz</h2>
+                    </div>
+                    <div class="products-grid">
+                        <!-- Bu yerga oldingi Chizzi Chizz mahsulotlarini qo'yishingiz mumkin -->
+                        <div class="product-card">
+                            <div class="badge">4x pishloq 🧀</div>
+                            <div class="product-img"><img
+                                    src="https://images.unsplash.com/photo-1626700051175-6818013e1d4f?w=400&auto=format&fit=crop"
+                                    alt=""></div>
+                            <h3 class="product-title">Chizzi Mol go'shtli combo</h3>
+                            <div class="product-bottom">
+                                <p class="product-price">82 000 so'm</p>
+                                <button class="add-to-cart-btn">Savatga</button>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="badge">4x pishloq 🧀</div>
+                            <div class="product-img"><img
+                                    src="https://images.unsplash.com/photo-1626700051175-6818013e1d4f?w=400&auto=format&fit=crop"
+                                    alt=""></div>
+                            <h3 class="product-title">Chizzi Mol go'shtli combo</h3>
+                            <div class="product-bottom">
+                                <p class="product-price">82 000 so'm</p>
+                                <button class="add-to-cart-btn">Savatga</button>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="badge">4x pishloq 🧀</div>
+                            <div class="product-img"><img
+                                    src="https://images.unsplash.com/photo-1626700051175-6818013e1d4f?w=400&auto=format&fit=crop"
+                                    alt=""></div>
+                            <h3 class="product-title">Chizzi Mol go'shtli combo</h3>
+                            <div class="product-bottom">
+                                <p class="product-price">82 000 so'm</p>
+                                <button class="add-to-cart-btn">Savatga</button>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="badge">4x pishloq 🧀</div>
+                            <div class="product-img"><img
+                                    src="https://images.unsplash.com/photo-1626700051175-6818013e1d4f?w=400&auto=format&fit=crop"
+                                    alt=""></div>
+                            <h3 class="product-title">Chizzi Mol go'shtli combo</h3>
+                            <div class="product-bottom">
+                                <p class="product-price">82 000 so'm</p>
+                                <button class="add-to-cart-btn">Savatga</button>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="badge">4x pishloq 🧀</div>
+                            <div class="product-img"><img
+                                    src="https://images.unsplash.com/photo-1626700051175-6818013e1d4f?w=400&auto=format&fit=crop"
+                                    alt=""></div>
+                            <h3 class="product-title">Chizzi Mol go'shtli combo</h3>
+                            <div class="product-bottom">
+                                <p class="product-price">82 000 so'm</p>
+                                <button class="add-to-cart-btn">Savatga</button>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="badge">4x pishloq 🧀</div>
+                            <div class="product-img"><img
+                                    src="https://images.unsplash.com/photo-1626700051175-6818013e1d4f?w=400&auto=format&fit=crop"
+                                    alt=""></div>
+                            <h3 class="product-title">Chizzi Mol go'shtli combo</h3>
+                            <div class="product-bottom">
+                                <p class="product-price">82 000 so'm</p>
+                                <button class="add-to-cart-btn">Savatga</button>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="badge">4x pishloq 🧀</div>
+                            <div class="product-img"><img
+                                    src="https://images.unsplash.com/photo-1626700051175-6818013e1d4f?w=400&auto=format&fit=crop"
+                                    alt=""></div>
+                            <h3 class="product-title">Chizzi Mol go'shtli combo</h3>
+                            <div class="product-bottom">
+                                <p class="product-price">82 000 so'm</p>
+                                <button class="add-to-cart-btn">Savatga</button>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="badge">4x pishloq 🧀</div>
+                            <div class="product-img"><img
+                                    src="https://images.unsplash.com/photo-1626700051175-6818013e1d4f?w=400&auto=format&fit=crop"
+                                    alt=""></div>
+                            <h3 class="product-title">Chizzi Mol go'shtli combo</h3>
+                            <div class="product-bottom">
+                                <p class="product-price">82 000 so'm</p>
+                                <button class="add-to-cart-btn">Savatga</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 2-BO'LIM: Lavash (Skrinshotdagi qism) -->
+                <section id="lavash" class="menu-section">
+                    <div class="category-header">
+                        <span class="header-icon">🌯</span>
+                        <h2>Lavash</h2>
+                    </div>
+                    <div class="products-grid">
+
+                        <!-- Macho lavash -->
+                        <div class="product-card">
+                            <div class="badge red">2x Go'sht</div>
+                            <div class="product-img">
+                                <img src="https://images.unsplash.com/photo-1529006557810-274b9b2fc783?w=400&auto=format&fit=crop"
+                                    alt="Macho lavash">
+                            </div>
+                            <h3 class="product-title">Macho lavash</h3>
+                            <div class="product-bottom">
+                                <p class="product-price">63 000 so'm</p>
+                                <button class="add-to-cart-btn">Savatga</button>
+                            </div>
+                        </div>
+
+                        <!-- Mol go'shtli pishloqli lavash L -->
+                        <div class="product-card">
+                            <div class="product-img">
+                                <img src="https://images.unsplash.com/photo-1529006557810-274b9b2fc783?w=400&auto=format&fit=crop"
+                                    alt="Lavash">
+                            </div>
+                            <h3 class="product-title">Mol go'shtli pishloqli lavash L</h3>
+                            <div class="product-bottom">
+                                <p class="product-price">45 000 so'm</p>
+                                <button class="add-to-cart-btn">Savatga</button>
+                            </div>
+                        </div>
+
+                        <!-- Mol go'shtli lavash L -->
+                        <div class="product-card">
+                            <div class="product-img">
+                                <img src="https://images.unsplash.com/photo-1529006557810-274b9b2fc783?w=400&auto=format&fit=crop"
+                                    alt="Lavash">
+                            </div>
+                            <h3 class="product-title">Mol go'shtli lavash L</h3>
+                            <div class="product-bottom">
+                                <p class="product-price">42 000 so'm</p>
+                                <button class="add-to-cart-btn">Savatga</button>
+                            </div>
+                        </div>
+
+                        <!-- Mol go'shtli qalampirli lavash L -->
+                        <div class="product-card">
+                            <div class="product-img">
+                                <img src="https://images.unsplash.com/photo-1529006557810-274b9b2fc783?w=400&auto=format&fit=crop"
+                                    alt="Lavash">
+                            </div>
+                            <h3 class="product-title">Mol go'shtli qalampirli lavash L</h3>
+                            <div class="product-bottom">
+                                <p class="product-price">42 000 so'm</p>
+                                <button class="add-to-cart-btn">Savatga</button>
+                            </div>
+                        </div>
+
+                        <!-- Tovuq go'shtli pishloqli lavash L -->
+                        <div class="product-card">
+                            <div class="product-img">
+                                <img src="https://images.unsplash.com/photo-1529006557810-274b9b2fc783?w=400&auto=format&fit=crop"
+                                    alt="Lavash">
+                            </div>
+                            <h3 class="product-title">Tovuq go'shtli pishloqli lavash L</h3>
+                            <div class="product-bottom">
+                                <p class="product-price">40 000 so'm</p>
+                                <button class="add-to-cart-btn">Savatga</button>
+                            </div>
+                        </div>
+
+                        <!-- Lavashello L -->
+                        <div class="product-card">
+                            <div class="product-img">
+                                <img src="https://images.unsplash.com/photo-1529006557810-274b9b2fc783?w=400&auto=format&fit=crop"
+                                    alt="Lavash">
+                            </div>
+                            <h3 class="product-title">Lavashello L</h3>
+                            <div class="product-bottom">
+                                <p class="product-price">37 000 so'm</p>
+                                <button class="add-to-cart-btn">Savatga</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- 3-BO'LIM: Xot Dog -->
+                <section id="xot-dog" class="menu-section">
+                    <div class="category-header">
+                        <span class="header-icon">🌭</span>
+                        <h2>Xot Dog</h2>
+                    </div>
+                    <div class="products-grid">
+                        <div class="product-card">
+                            <div class="product-img">
+                                <img src="https://images.unsplash.com/photo-1619740455993-9e612b1af08a?w=400&auto=format&fit=crop"
+                                    alt="Xot dog">
+                            </div>
+                            <h3 class="product-title">Sub mol go'shtidan</h3>
+                            <div class="product-bottom">
+                                <p class="product-price">27 000 so'm</p>
+                                <button class="add-to-cart-btn">Savatga</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+
+                <!-- 4-BO'LIM: Salatlar -->
+                <section id="salatlar" class="menu-section">
+                    <div class="category-header">
+                        <span class="header-icon">🌭</span>
+                        <h2>Salatlar</h2>
+                    </div>
+                    <div class="products-grid">
+                        <div class="product-card">
+                            <div class="product-img">
+                                <img src="https://evos.uz/_next/image?url=https%3A%2F%2F16a9564f-f8ec-42ba-a998-3027aa809e50.selstorage.ru%2Fevos%2F72611%2F30864%2Fimages%2Fitems%2Fb26651e5634b923369bbebd0fe1b6f1c.PNG&w=1920&q=75"
+                                    alt="Salat">
+                            </div>
+                            <h3 class="product-title">Sezar salat</h3>
+                            <div class="product-bottom">
+                                <p class="product-price">33 000 so'm</p>
+                                <button class="add-to-cart-btn">Savatga</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+
+
+        <!-- FOOTER (Saytning pastki qismi) -->
+        <footer class="site-footer">
+            <div class="footer-container">
+
+                <!-- CHAP TOMON (Logo va Menyu taglari) -->
+                <div class="footer-left">
+                    <a href="#" class="footer-logo">EVOS</a>
+
+                    <div class="footer-links">
+                        <a href="#" class="footer-tag">Filiallar</a>
+                        <a href="#" class="footer-tag">Table Service</a>
+                        <a href="#" class="footer-tag">Vakansiyalar</a>
+                        <a href="#" class="footer-tag">Kontaktlar</a>
+                        <a href="#" class="footer-tag tag-blue">
+                            <span>🐳</span> Bolalarga
+                        </a>
+                        <a href="#" class="footer-tag">Sertifikatlar</a>
+                        <a href="#" class="footer-tag">Оммавай оферта</a>
+                        <a href="#" class="footer-tag">Maxfiylik siyosati</a>
+                        <a href="#" class="footer-tag">Sodiqlik dasturi qoidalari</a>
+                    </div>
+
+                    <!-- Halal yorlig'i -->
+                    <div class="halal-badge">
+                        <svg width="40" height="40" viewBox="0 0 100 100" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <!-- Oddiy Halal logosi imitatsiyasi -->
+                            <path d="M50 5 L95 25 L95 75 L50 95 L5 75 L5 25 Z" stroke="#38b04a" stroke-width="4"
+                                fill="transparent" />
+                            <text x="50" y="55" font-size="20" font-weight="bold" fill="#38b04a" text-anchor="middle"
+                                font-family="Arial">HALAL</text>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- O'NG TOMON (Ilovalar, Ijtimoiy tarmoqlar, Kontaktlar) -->
+                <div class="footer-right">
+
+                    <!-- Mobil ilovalar yuklash tugmalari -->
+                    <div class="app-links">
+                        <a href="#" class="app-btn">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                                <path
+                                    d="M14.7 9.8c-.1-2.1 1.7-3.1 1.8-3.2-1-1.4-2.5-1.6-3.1-1.6-1.3-.1-2.5.8-3.2.8-.7 0-1.7-.8-2.7-.8-1.4 0-2.6.8-3.4 2-1.4 2.5-.4 6.2 1 8.2.7 1 1.5 2.1 2.6 2 1-.1 1.4-.7 2.6-.7 1.2 0 1.6.7 2.6.7 1.1 0 1.8-1 2.5-2 .9-1.2 1.2-2.4 1.2-2.5-.1 0-2.1-.8-2.1-3zM12.5 4.1c.6-.7 1-1.6 1-2.5 0-.1 0-.1 0-.2-.8.1-1.8.6-2.4 1.2-.5.5-.9 1.4-1 2.3 0 .1 0 .2.1.2.9 0 1.8-.4 2.3-1z" />
+                            </svg>
+                            <div class="app-btn-text">
+                                <span>Download on the</span>
+                                <strong>App Store</strong>
+                            </div>
+                        </a>
+                        <a href="#" class="app-btn">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                                <path
+                                    d="M3.6 2.3C3.2 2.6 3 3.2 3 4v16c0 .8.2 1.4.6 1.7l.1.1 9-9v-.3l-9-9-.1.1zm9.6 9.4l3 3c1 .5 2 1 2.2 1.1.2.1.4.1.6 0 .2-.1.4-.4.4-.8V8.9c0-.4-.2-.7-.4-.8-.2-.1-1.2-.7-2.2-1.2l-3 3.1-.6.7zM13 12l-8.5 8.5c.2.1.4.1.7 0 .5-.2 2.6-1.4 5.3-2.9L13 12zm0-.1l-2.6-2.5c-2.7-1.5-4.8-2.7-5.3-2.9-.3-.1-.5-.1-.7 0L13 11.9z" />
+                            </svg>
+                            <div class="app-btn-text">
+                                <span>GET IT ON</span>
+                                <strong>Google Play</strong>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Ijtimoiy tarmoqlar -->
+                    <div class="social-section">
+                        <h4>Bizning ijtimoiy tarmoqlar</h4>
+                        <div class="social-icons">
+                            <!-- Instagram -->
+                            <a href="#" class="social-icon insta">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                                </svg>
+                            </a>
+                            <!-- Facebook -->
+                            <a href="#" class="social-icon fb">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                                </svg>
+                            </a>
+                            <!-- Telegram -->
+                            <a href="#" class="social-icon tg">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                                    <path
+                                        d="M21.198 2.433a2.242 2.242 0 0 0-1.022.215l-17.5 7.825a2.24 2.24 0 0 0 .1 4.195l4.585 1.583 1.83 5.76a1.5 1.5 0 0 0 2.53.715l2.97-2.93 5.485 4.31a2.242 2.242 0 0 0 3.63-1.63L23.998 4.225a2.24 2.24 0 0 0-2.8-1.792zM17.778 7.373l-8.685 8.16.03.01-1.395 4.095-.82-4.14 11.53-7.555a.25.25 0 0 1 .28.405l-.94.985z">
+                                    </path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Aloqa (Telefon) -->
+                    <div class="contact-section">
+                        <h4>Qorningiz ochdimi? Telefon orqali buyurtma bering</h4>
+                        <a href="tel:+998712031212" class="footer-phone">+998 71 203 12 12</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pastki Kopirayt -->
+            <div class="footer-bottom">
+                <p>© Evos 2006 - 2026 All rights reserved</p>
+            </div>
+        </footer>
+    </div>
+
+    <div class="cart-overlay" id="cartOverlay" aria-hidden="true">
+        <aside class="cart-drawer" id="cartDrawer" role="dialog" aria-modal="true" aria-labelledby="cartTitle"
+            tabindex="-1">
+            <header class="cart-drawer-header">
+                <div>
+                    <h2 id="cartTitle">Savat</h2>
+                    <p id="cartSummary">0 ta mahsulot · 0 so'm</p>
+                </div>
+                <button class="cart-close" id="closeCart" type="button" aria-label="Savatni yopish">×</button>
+            </header>
+            <div class="cart-items" id="cartItems"></div>
+            <p class="cart-empty" id="cartEmpty">Savatingiz hozircha bo'sh</p>
+            <footer class="cart-footer">
+                <div class="cart-total-row">
+                    <span>Umumiy summa</span>
+                    <strong id="cartTotal">0 so'm</strong>
+                </div>
+            </footer>
+            <button class="order-btn" id="checkoutButton" type="button" hidden>Buyurtmani Rasmiylashtirish</button>
+        </aside>
+    </div>
+
+    <div class="checkout-overlay" id="checkoutOverlay" aria-hidden="true">
+        <section class="checkout-dialog" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle"
+            aria-describedby="checkoutPrompt">
+            <button class="checkout-close" id="closeCheckout" type="button" aria-label="Oynani yopish">×</button>
+            <h2 id="checkoutTitle">Buyurtmani rasmiylashtirish</h2>
+
+            <form class="checkout-step" id="phoneStep">
+                <p class="checkout-prompt" id="checkoutPrompt">Bog'lanish uchun telefon raqamingizni kiriting</p>
+                <label for="checkoutPhone">Telefon raqami</label>
+                <input id="checkoutPhone" name="phone" type="tel" placeholder="+998 90 123 45 67"
+                    autocomplete="tel" inputmode="tel" required>
+                <button class="checkout-primary" type="submit">Davom etish</button>
+            </form>
+
+            <form class="checkout-step" id="addressStep" hidden>
+                <p class="checkout-prompt" id="addressPrompt">Buyurtmani yetkazib berish manzilini kiriting</p>
+                <label for="checkoutAddress">Manzil</label>
+                <textarea id="checkoutAddress" name="address" rows="3" placeholder="Ko'cha, uy va xonadon raqami"
+                    autocomplete="street-address" required minlength="5"></textarea>
+                <div class="checkout-actions">
+                    <button class="checkout-secondary" id="backToPhone" type="button">Orqaga</button>
+                    <button class="checkout-primary" type="submit">Buyurtmani yuborish</button>
+                </div>
+            </form>
+
+            <div class="checkout-step checkout-success" id="checkoutSuccess" role="status" aria-live="polite" hidden>
+                <span class="checkout-success-icon" aria-hidden="true">✓</span>
+                <p id="successMessage">Buyurtmangiz qabul qilindi.</p>
+                <div id="checkoutReceipt"></div>
+                <button class="checkout-primary" id="finishCheckout" type="button">Yopish</button>
+            </div>
+        </section>
+    </div>
+
+    <div class="history-overlay" id="historyOverlay" aria-hidden="true">
+        <section class="history-dialog" role="dialog" aria-modal="true" aria-labelledby="historyTitle" tabindex="-1">
+            <header class="history-header">
+                <div>
+                    <h2 id="historyTitle">Buyurtmalar tarixi</h2>
+                    <p>Buyurtmalaringiz cheklari shu qurilmada saqlanadi</p>
+                </div>
+                <button class="cart-close" id="closeHistory" type="button" aria-label="Tarixni yopish">×</button>
+            </header>
+            <p class="history-empty" id="historyEmpty">Hozircha buyurtmalar yo'q</p>
+            <div class="history-items" id="historyItems"></div>
+        </section>
+    </div>
+
+    <p class="storage-notice" id="storageNotice" role="alert" hidden></p>
+
+    <div class="login-overlay" id="loginOverlay" aria-hidden="true">
+        <section class="login-dialog" role="dialog" aria-modal="true" aria-labelledby="loginTitle">
+            <button class="checkout-close" id="closeLogin" type="button" aria-label="Kirish oynasini yopish">×</button>
+            <span class="login-dialog-icon" aria-hidden="true">🔐</span>
+            <h2 id="loginTitle">Admin panelga kirish</h2>
+            <p class="login-dialog-description">Admin hisobining email manzili va parolini kiriting.</p>
+            <form id="adminLoginForm">
+                <label for="adminUsername">Email</label>
+                <input id="adminUsername" name="email" type="email" autocomplete="username" required>
+                <label for="adminPassword">Parol</label>
+                <input id="adminPassword" name="password" type="password" autocomplete="current-password" required>
+                <p class="login-error" id="loginError" role="alert" hidden></p>
+                <button class="checkout-primary" type="submit">Kirish</button>
+            </form>
+        </section>
+    </div>
+
+    <!-- MODAL DARCHA (Maxsulot detali uchun) -->
+  <div class="modal-overlay" id="productModal">
+    <div class="modal-content">
+      
+      <!-- Yopish tugmasi -->
+      <button class="modal-close" id="closeModal">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+
+      <!-- Badge (Masalan: 4x pishloq) -->
+      <div class="modal-badge-container">
+        <span class="modal-badge" id="modalBadge">4x pishloq 🧀</span>
+      </div>
+
+      <!-- Rasm -->
+      <div class="modal-image">
+        <img src="" alt="Product" id="modalImg">
+      </div>
+
+      <!-- Ma'lumotlar -->
+      <div class="modal-info">
+        <h2 id="modalTitle">Mahsulot nomi</h2>
+        <p id="modalDesc">Mahsulot haqida batafsil ma'lumot shu yerda bo'ladi...</p>
+      </div>
+
+      <!-- Tugma -->
+      <button class="modal-btn" id="modalBtn">
+        Savatga <span id="modalPrice">0 so'm</span>
+      </button>
+
+    </div>
+  </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"
+        referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="./supabaseClient.js"></script>
+    <script src="./script.js"></script>
+</body>
+
+</html>
